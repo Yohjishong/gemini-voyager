@@ -120,14 +120,26 @@ function applyWidth(widthPercent: number) {
     ${userRules} {
       max-width: ${widthValue} !important;
       width: min(100%, ${widthValue}) !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
 
     /* Model response containers */
     ${assistantRules} {
       max-width: ${widthValue} !important;
       width: min(100%, ${widthValue}) !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
 
+    model-response:has(> .deferred-response-indicator),
+    .response-container:has(img[src*="sparkle"]), 
+    main > div:has(img[src*="sparkle"]) {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: min(100%, ${widthValue}) !important;
+    }
+        
     /* Additional deep targeting for nested elements */
     user-query,
     user-query > *,
